@@ -24,15 +24,12 @@ void kill_signal() {
 
 // Real challenge starts here
 
-char flag[50];
 
-void setup() {
+void func() {
+    char flag[50];
     FILE* f = fopen("flag.txt", "r");
     fscanf(f, "%s", flag);
     fclose(f);
-}
-
-void func() {
     printf("[*] We suspect that there may be a big data breach that has happened on our servers\n");
     printf("Can you find what caused it?: ");
     char cause[100];
@@ -43,6 +40,5 @@ void func() {
 int main() {
     buffering();
     kill_signal();
-    setup();
     func();
 }
